@@ -1,7 +1,7 @@
 {
   "name": "unit-testing",
   "version": "1.0.0",
-  "description": "",
+  "description": "The table below presents the score ranges and corresponding grades for Math, Physics, and Chemistry.",
   "main": "grading-system.js",
   "type": "module",
   "devDependencies": {

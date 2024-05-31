@@ -1,4 +1,4 @@
-const mathChemPhy = function mathSciences(grades){
+export const gradeMathSciences= (grades) => {
     if ((grades < 0) || (grades >100)){
         return "Please input a value between 0 to 100"
     }else if(grades >= 70){
@@ -14,7 +14,7 @@ const mathChemPhy = function mathSciences(grades){
     }
 }
 
-const gradeCr = function religiousEducation(grades){
+export function religiousEducation(grades){
     if ((grades < 0) || (grades >100)){
         return "Please input a value between 0 to 100"
     }else if(grades >= 80){
@@ -30,7 +30,7 @@ const gradeCr = function religiousEducation(grades){
     }
 }
 
-const gradesLangComp = function languagesComp(grades){
+export function languagesComp(grades){
     if ((grades < 0) || (grades >100)){
         return "Please input a value between 0 to 100"
     }else if(grades >= 75){
@@ -47,7 +47,7 @@ const gradesLangComp = function languagesComp(grades){
 }
 
 // <-------------------------Grade Calculation------------------>
-function calculateGradesAndAverage(){
+export function calculateGradesAndAverage(){
     const studentScore = {name: "Dennis Doe", math: 80, eng: 65, kis: 48, phy: 67, che: 56, re:89, comp: 82};
 
     const avgpts = (studentScore.math + studentScore.eng +studentScore.kis + studentScore.phy + studentScore.che + studentScore.re + studentScore.comp)
@@ -56,10 +56,7 @@ function calculateGradesAndAverage(){
     const average = Math.floor(avgpts / 7)
     // console.log(average)
 
-    const studentsGrade = `name: ${studentScore.name}, math: ${mathSciences(studentScore.math)}, eng: ${languagesComp(studentScore.eng)}, kis: ${languagesComp(studentScore.kis)}, phy: ${mathSciences(studentScore.phy)}, che: ${mathSciences(studentScore.che)}, re: ${religiousEducation(studentScore.re)}, comp: ${languagesComp(studentScore.comp)}, avgPts: ${average}`
+    const studentsGrade = `name: ${studentScore.name}, math: ${gradeMathSciences(studentScore.math)}, eng: ${languagesComp(studentScore.eng)}, kis: ${languagesComp(studentScore.kis)}, phy: ${gradeMathSciences(studentScore.phy)}, che: ${gradeMathSciences(studentScore.che)}, re: ${religiousEducation(studentScore.re)}, comp: ${languagesComp(studentScore.comp)}, avgPts: ${average}`
     return (studentsGrade)
 }
 console.log(calculateGradesAndAverage())
-
-// export default {mathSciences, languagesComp, religiousEducation, calculateGradesAndAverage};
-module.export = {mathSciences, languagesComp, religiousEducation, calculateGradesAndAverage, mathChemPhy}
